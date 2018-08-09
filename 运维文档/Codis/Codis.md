@@ -280,7 +280,7 @@ metrics_report_influxdb_username = ""
 metrics_report_influxdb_password = ""
 metrics_report_influxdb_database = ""
 
-\# 配置文件参数说明:
+# 配置文件参数说明:
 #	<font color=red>product_name：</font> 集群名称，参考dashboard参数说明
 #	<font color=red>product_auth：</font> 集群密码，默认为空
 #	<font color=red>admin_addr：</font> RESTfulAPI 端口
@@ -295,10 +295,10 @@ metrics_report_influxdb_database = ""
 #	<font color=red>session_keepalive_period：</font> 与 client 的 tcp keepalive 周期，仅tcp有效，0表示禁止
 
 
-\# 启动Codis Proxy
+# 启动Codis Proxy
 [root@node2 codis]# nohup ./bin/codis-proxy --ncpu=4 --config=./conf/proxy.conf --log=./logs/proxy.log --log-level=WARN &> /dev/null &
-\# 参数说明:
-\# 和Codis Dashboard一样
+# 参数说明:
+# 和Codis Dashboard一样
 
 <font color=red>
 # 总结：
