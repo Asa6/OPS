@@ -112,8 +112,7 @@ gitlab_rails['smtp_enable_starttls_auto'] = true
 [root@node1 ~]# gitlab-ctl reconfigure  # 重新配置gitlab
 </pre>
 
-打开游览器访问http://http://192.168.100.10:8200,输入用户名和密码后，看到项目http（10.10.1.18:8200）和ssh（prj.testin.cn:8201）地址如下图所示即成功：
+打开游览器访问http://http://192.168.100.10:8200,输入用户名和密码后，看到项目http（10.10.1.18:8200）和ssh（xxx:xxx）地址如下图所示即成功：
 
 ![](http://i.imgur.com/IrdaaSt.png)
 
-![](http://i.imgur.com/Hf0mIS6.png)
