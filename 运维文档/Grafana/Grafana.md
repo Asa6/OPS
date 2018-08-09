@@ -1,5 +1,5 @@
 # Grafana #
-作者：耿浩源<br />
+作者：HY.Geng<br />
 日期：2017年03月10日<br />
 版本：Grafana 3.1.1<br />
 官方文档：<a href="http://docs.grafana.org">http://docs.grafana.org</a><br />
