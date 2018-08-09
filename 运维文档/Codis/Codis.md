@@ -39,7 +39,7 @@
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 依赖 codis-dashboard 实例，自动抓取集群各个组件的状态；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 会根据当前集群状态自动生成主从切换策略，并在需要时通过 codis-dashboard 完成主从切换。</p>
-&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Storage：为集群状态提供外部存储。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;**Storage**：为集群状态提供外部存储。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 提供 Namespace 概念，不同集群的会按照不同 product name 进行组织；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 目前仅提供了 Zookeeper 和 Etcd 两种实现，但是提供了抽象的 interface 可自行扩展。</p>
