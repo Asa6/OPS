@@ -80,7 +80,6 @@
 <pre>
 # 基础依赖环境
 [root@node1 ~]# yum install -y git gcc make g++ gcc-c++ automake openssl-devel zlib-devel
-
 # 安装GOLANG环境
 [root@node1 ~]# wget http://www.golangtc.com/static/go/1.7.1/go1.7.1.linux-amd64.tar.gz
 [root@node1 ~]# tar -zxvf go1.7.1.linux-amd64.tar.gz -C /usr/local/
