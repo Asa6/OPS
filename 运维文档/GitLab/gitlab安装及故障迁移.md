@@ -95,17 +95,17 @@
 
 ### 6 调整配置 ###
 <pre>
-[root@node1 ~]# cat /etc/gitlab/gitlab.rb |grep -v "^#" | grep -v "^$"   # 修改如下三个参数的值
+[root@node1 ~]# cat /etc/gitlab/gitlab.rb |grep -v "^#" | grep -v "^$"   # 修改如下参数的值,请安实际情况填写
 external_url 'http://10.10.1.18:8200'
-gitlab_rails['gitlab_ssh_host'] = 'prj.testin.cn'
-gitlab_rails['gitlab_email_from'] = 'project@testin.cn'
-gitlab_rails['gitlab_shell_ssh_port'] = 8201
+gitlab_rails['gitlab_ssh_host'] = 'xxxxxxxxx'
+gitlab_rails['gitlab_email_from'] = 'xxxxxxxxx'
+gitlab_rails['gitlab_shell_ssh_port'] = xxxxx
 gitlab_rails['smtp_enable'] = true
-gitlab_rails['smtp_address'] = "mail.testin.cn"
-gitlab_rails['smtp_port'] = 587
-gitlab_rails['smtp_user_name'] = "project@testin.cn"
-gitlab_rails['smtp_password'] = "m12345678"
-gitlab_rails['smtp_domain'] = "testin.cn"
+gitlab_rails['smtp_address'] = "xxxxx"
+gitlab_rails['smtp_port'] = xxxxxx
+gitlab_rails['smtp_user_name'] = "xxxxxxx"
+gitlab_rails['smtp_password'] = "xxxxx"
+gitlab_rails['smtp_domain'] = "xxxxxx"
 gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
 
