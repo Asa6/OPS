@@ -80,7 +80,8 @@
 <pre>
 # 基础依赖环境
 [root@node1 ~]# yum install -y git gcc make g++ gcc-c++ automake openssl-devel zlib-devel
-# 安装GOLANG环境
+
+\# 安装GOLANG环境
 [root@node1 ~]# wget http://www.golangtc.com/static/go/1.7.1/go1.7.1.linux-amd64.tar.gz
 [root@node1 ~]# tar -zxvf go1.7.1.linux-amd64.tar.gz -C /usr/local/
 [root@node1 ~]# mkdir -p /home/codis/gopath
@@ -93,7 +94,7 @@ export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 [root@node1 ~]# go version   # 查看GOLANG环境是否安装成功
 go version go1.7.1 linux/amd64
 
-# 下载并安装Codis
+\# 下载并安装Codis
 [root@node1 ~]# go get -u -d github.com/CodisLabs/codis  # 由于国内的大环境问题（大家都懂），所以这里会比较慢
 [root@node1 ~]# cd /home/codis/gopath/src/github.com/CodisLabs/codis/
 [root@node1 codis]# make
