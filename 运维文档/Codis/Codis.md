@@ -371,7 +371,7 @@ logfile "/usr/local/codis/logs/sentinel.log"
 pidfile "/usr/local/codis/run/sentinel.pid"
 
 
-\# 参数详解:
+# 参数详解:
 <font color=red># requirepass:</font> 设置连接master和slave时的密码，注意的是sentinel不能分别为master和slave设置不同的密码，因此master和slave的密码应该设置相同。
 <font color=red># 配置文件里只需要填写基本的参数即可，redis的主从关系不需要填写，因为redis的主从关系是在Codis Dashboard维护的，所以在启动Sentinel时Codis会自动填写主从关系。</font>
 [root@node1 codis]# ./bin/codis-server conf/sentinel.conf --sentinel
@@ -385,9 +385,9 @@ pidfile "/usr/local/codis/run/sentinel.pid"
 # 原型：
 # 	./bin/codis-admin --proxy=ip:port --shutdown
 
-\# 关闭dashboard
+# 关闭dashboard
 [root@node1 codis]# ./bin/codis-admin --dashboard=192.168.1.232:18080 --shutdown
-\# 原型：
+# 原型：
 # 	./bin/codis-admin --dashboard=ip:port --shutdown
 </pre>
 
