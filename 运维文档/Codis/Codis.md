@@ -209,10 +209,10 @@ sentinel_quorum = 2
 \# 启动Codis Dashboard
 [root@node1 codis]# nohup ./bin/codis-dashboard --ncpu=4 --config=./conf/dashboard.conf --log=./logs/dashboard.log --log-level=WARN &> /dev/null &
 \# 参数说明:
-#	<font color=red>--ncpu=N</font> #最大使用 CPU 个数
-#	-c  CONF, <font color=red>--config=CONF</font> #指定启动配置文件
-#	-l   FILE, <font color=red>--log=FILE</font> #设置 log 输出文件
-#	<font color=red>--log-level=LEVEL</font> #设置 log 输出等级：INFO,WARN,DEBUG,ERROR；默认INFO，推荐WARN
+\#	<font color=red>--ncpu=N</font> #最大使用 CPU 个数
+\#	-c  CONF, <font color=red>--config=CONF</font> #指定启动配置文件
+\#	-l   FILE, <font color=red>--log=FILE</font> #设置 log 输出文件
+\#	<font color=red>--log-level=LEVEL</font> #设置 log 输出等级：INFO,WARN,DEBUG,ERROR；默认INFO，推荐WARN
 
 <font color=red># 执行成功后查看日志，出现以下内容说明成功</font>
 [root@node1 codis]# more ./logs/dashboard.log.2016-11-24
@@ -338,7 +338,9 @@ metrics_report_influxdb_database = ""
 4. Slot分组
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;把所有Slot分成3组，每组Slot对应一组Redis Server Group。</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Codis中采用预分片的形式，启动的时候就创建了1024个slot，1个slot相当于1个箱子，每个箱子有固定的编号，范围是0~1023。slot这个箱子用作存放Key，至于Key存放到哪个箱子，可以通过算法“crc32(key)%1024”获得一个数字，这个数字的范围一定是0~1023之间，Key就放到这个数字对应的slot。例如，如果某个Key通过算法“crc32(key)%1024”得到的数字是5，就放到编码为5的slot（箱子）。1个slot只能放1个Redis Server Group，不能把1个slot放到多个Redis Server Group中。1个Redis Server Group最少可以存放1个slot，最大可以存放1024个slot。因此，Codis中最多可以指定1024个Redis Server Group。</p>
+
 ![](http://i.imgur.com/Ksi7pVw.png)
+
 5. 添加Proxy
 ![](http://i.imgur.com/jdURNZI.png)
 
@@ -353,7 +355,7 @@ metrics_report_influxdb_database = ""
 [root@node3 codis]# nohup ./bin/codis-ha  --log=./logs/ha.log  --log-level=WARN  --dashboard=192.168.1.232:18080 &> /dev/null &
 
 \# 参数详解
-#	 --dashboard： codis dashboard的所在地址
+\#	 --dashboard： codis dashboard的所在地址
 </pre>
 
 
