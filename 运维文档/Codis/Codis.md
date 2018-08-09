@@ -17,7 +17,7 @@
 <p>Codis 3.x 由以下组件组成：</p>
 
 
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis Server：**基于 redis-2.8.21 分支开发。增加了额外的数据结构，以支持 slot 有关的操作以及数据迁移指令。具体的修改可以参考文档 <a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/redis_change_zh.md">redis 的修改</a>。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis Server：**基于 redis-2.8.21 分支开发。增加了额外的数据结构，以支持 slot 有关的操作以及数据迁移指令。具体的修改可以参考文档 <a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/redis_change_zh.md">redis 的修改</a>。
 
 &nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis Proxy：**客户端连接的 Redis 代理服务, 实现了 Redis 协议。 除部分命令不支持以外(<a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/unsupported_cmds.md">不支持的命令列表</a>)，表现的和原生的 Redis 没有区别（就像 Twemproxy）。
 
