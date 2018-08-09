@@ -17,29 +17,29 @@
 <p>Codis 3.x 由以下组件组成：</p>
 
 
-&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis Server：**基于 redis-2.8.21 分支开发。增加了额外的数据结构，以支持 slot 有关的操作以及数据迁移指令。具体的修改可以参考文档 <a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/redis_change_zh.md">redis 的修改</a>。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis Server：基于 redis-2.8.21 分支开发。增加了额外的数据结构，以支持 slot 有关的操作以及数据迁移指令。具体的修改可以参考文档 <a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/redis_change_zh.md">redis 的修改</a>。
 
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis Proxy：**客户端连接的 Redis 代理服务, 实现了 Redis 协议。 除部分命令不支持以外(<a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/unsupported_cmds.md">不支持的命令列表</a>)，表现的和原生的 Redis 没有区别（就像 Twemproxy）。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis Proxy：客户端连接的 Redis 代理服务, 实现了 Redis 协议。 除部分命令不支持以外(<a href="https://github.com/CodisLabs/codis/blob/release3.1/doc/unsupported_cmds.md">不支持的命令列表</a>)，表现的和原生的 Redis 没有区别（就像 Twemproxy）。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 对于同一个业务集群而言，可以同时部署多个 codis-proxy 实例；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 不同 codis-proxy 之间由 codis-dashboard 保证状态同步。</p>
 
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis Dashboard：**集群管理工具，支持 codis-proxy、codis-server 的添加、删除，以及据迁移等操作。在集群状态发生改变时，codis-dashboard 维护集群下所有 codis-proxy 的状态的一致性。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis Dashboard：集群管理工具，支持 codis-proxy、codis-server 的添加、删除，以及据迁移等操作。在集群状态发生改变时，codis-dashboard 维护集群下所有 codis-proxy 的状态的一致性。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 对于同一个业务集群而言，同一个时刻 codis-dashboard 只能有 0个或者1个；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 所有对集群的修改都必须通过 codis-dashboard 完成。</p>
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis Admin：**集群管理的命令行工具。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis Admin：集群管理的命令行工具。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 可用于控制 codis-proxy、codis-dashboard 状态以及访问外部存储。</p>
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis FE：**集群管理界面。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis FE：集群管理界面。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 多个集群实例共享可以共享同一个前端展示页面；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 通过配置文件管理后端 codis-dashboard 列表，配置文件可自动更新。</p>
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Codis HA：**为集群提供高可用。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Codis HA：为集群提供高可用。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 依赖 codis-dashboard 实例，自动抓取集群各个组件的状态；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 会根据当前集群状态自动生成主从切换策略，并在需要时通过 codis-dashboard 完成主从切换。</p>
-&nbsp;&nbsp;&nbsp;**●&nbsp;&nbsp;Storage：**为集群状态提供外部存储。
+&nbsp;&nbsp;&nbsp;●&nbsp;&nbsp;Storage：为集群状态提供外部存储。
 
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 提供 Namespace 概念，不同集群的会按照不同 product name 进行组织；</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;◎ 目前仅提供了 Zookeeper 和 Etcd 两种实现，但是提供了抽象的 interface 可自行扩展。</p>
