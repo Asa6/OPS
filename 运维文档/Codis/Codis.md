@@ -108,8 +108,8 @@ codis-admin  codis-fe         codis-proxy  codis-server-2.8.21  redis-cli
 <p>在node1、node2、node3节点部署。</p>
 <pre>
 
-# 配置Redis（也就是codis server,Codis安装包中自带）,我在3个节点上都安装redis，每个节点上启动一主一从，总共是6台redis实例
-# 重新建立Codis目录
+\# 配置Redis（也就是codis server,Codis安装包中自带）,我在3个节点上都安装redis，每个节点上启动一主一从，总共是6台redis实例
+\# 重新建立Codis目录
 [root@node1 codis]# mkdir -p /usr/local/codis
 [root@node1 codis]# cp -rf bin/ /usr/local/codis
 [root@node1 codis]# mkdir -p /usr/local/codis/{logs,conf,scripts,db,run}
@@ -206,9 +206,9 @@ sentinel_quorum = 2
 #	<font color=red>admin_addr：</font> RESTful API 端口
 
 
-# 启动Codis Dashboard
+\# 启动Codis Dashboard
 [root@node1 codis]# nohup ./bin/codis-dashboard --ncpu=4 --config=./conf/dashboard.conf --log=./logs/dashboard.log --log-level=WARN &> /dev/null &
-# 参数说明:
+\# 参数说明:
 #	<font color=red>--ncpu=N</font> #最大使用 CPU 个数
 #	-c  CONF, <font color=red>--config=CONF</font> #指定启动配置文件
 #	-l   FILE, <font color=red>--log=FILE</font> #设置 log 输出文件
@@ -280,7 +280,7 @@ metrics_report_influxdb_username = ""
 metrics_report_influxdb_password = ""
 metrics_report_influxdb_database = ""
 
-# 配置文件参数说明:
+\# 配置文件参数说明:
 #	<font color=red>product_name：</font> 集群名称，参考dashboard参数说明
 #	<font color=red>product_auth：</font> 集群密码，默认为空
 #	<font color=red>admin_addr：</font> RESTfulAPI 端口
@@ -295,10 +295,10 @@ metrics_report_influxdb_database = ""
 #	<font color=red>session_keepalive_period：</font> 与 client 的 tcp keepalive 周期，仅tcp有效，0表示禁止
 
 
-# 启动Codis Proxy
+\# 启动Codis Proxy
 [root@node2 codis]# nohup ./bin/codis-proxy --ncpu=4 --config=./conf/proxy.conf --log=./logs/proxy.log --log-level=WARN &> /dev/null &
-# 参数说明:
-# 和Codis Dashboard一样
+\# 参数说明:
+\# 和Codis Dashboard一样
 
 <font color=red>
 # 总结：
@@ -319,8 +319,8 @@ metrics_report_influxdb_database = ""
 <font color=red># 注意： --zookeeper  填写ZK集群中任意一台ZK所在的服务器IP地址</font>
 
 [root@node1 codis]# nohup ./bin/codis-fe --ncpu=4 --log=./logs/fe.log --log-level=WARN --dashboard-list=./conf/codis.json --listen=192.168.1.232:18090 &> /dev/null &
-# 参数说明:
-# --listen=ip:port  填写部署FE服务器的IP和端口
+\# 参数说明:
+\# --listen=ip:port  填写部署FE服务器的IP和端口
 </pre>
 
 ## Codis组件连接（FE方式） ##
@@ -352,7 +352,7 @@ metrics_report_influxdb_database = ""
 <pre>
 [root@node3 codis]# nohup ./bin/codis-ha  --log=./logs/ha.log  --log-level=WARN  --dashboard=192.168.1.232:18080 &> /dev/null &
 
-# 参数详解
+\# 参数详解
 #	 --dashboard： codis dashboard的所在地址
 </pre>
 
@@ -369,7 +369,7 @@ logfile "/usr/local/codis/logs/sentinel.log"
 pidfile "/usr/local/codis/run/sentinel.pid"
 
 
-# 参数详解:
+\# 参数详解:
 <font color=red># requirepass:</font> 设置连接master和slave时的密码，注意的是sentinel不能分别为master和slave设置不同的密码，因此master和slave的密码应该设置相同。
 <font color=red># 配置文件里只需要填写基本的参数即可，redis的主从关系不需要填写，因为redis的主从关系是在Codis Dashboard维护的，所以在启动Sentinel时Codis会自动填写主从关系。</font>
 [root@node1 codis]# ./bin/codis-server conf/sentinel.conf --sentinel
@@ -383,9 +383,9 @@ pidfile "/usr/local/codis/run/sentinel.pid"
 # 原型：
 # 	./bin/codis-admin --proxy=ip:port --shutdown
 
-# 关闭dashboard
+\# 关闭dashboard
 [root@node1 codis]# ./bin/codis-admin --dashboard=192.168.1.232:18080 --shutdown
-# 原型：
+\# 原型：
 # 	./bin/codis-admin --dashboard=ip:port --shutdown
 </pre>
 
