@@ -1,5 +1,5 @@
 # Zabbix #
-作者：耿浩源<br />
+作者：HY.Geng<br />
 日期：2017年02月27日<br />
 版本: zabbix 3.2<br />
 官方文档：<a href="http://www.zabbix.com/manuals">http://www.zabbix.com/manuals</a><br />
